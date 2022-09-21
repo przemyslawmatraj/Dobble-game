@@ -3,8 +3,8 @@ import Games from "../../components/Games/Games";
 
 function Menu() {
   return (
-    <div className={styles.container}>
-      <h1 className={styles.header}>
+    <div>
+      <h1 className={styles.heading}>
         <span>WSEI</span> Games
       </h1>
       <p className={styles.description}>
