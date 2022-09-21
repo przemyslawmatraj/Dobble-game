@@ -5,12 +5,17 @@ import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import DobbleGame from "./routes/DobbleGame/DobbleGame";
 import Quiz from "./routes/Quiz/Quiz";
+import Menu from "./routes/Menu/Menu";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
+      {
+        path: "/",
+        element: <Menu />,
+      },
       {
         path: "dobble",
         element: <DobbleGame />,

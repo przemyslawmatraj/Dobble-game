@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Meddon&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 :root {
   --cl-primary: #7fc241;
@@ -16,6 +16,8 @@
 }
 body {
   font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  color: var(--cl-dark);
   background-color: var(--cl-white);
 }
 

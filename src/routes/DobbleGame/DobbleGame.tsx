@@ -1,5 +1,5 @@
 function DobbleGame() {
-  return <div></div>;
+  return <div>d</div>;
 }
 
 export default DobbleGame;
