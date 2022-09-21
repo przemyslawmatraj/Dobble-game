@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 0;
+  flex-shrink: 0;
+  gap: 20px;
+  justify-content: center;
+  max-width: 1069px;
+  margin-inline: auto;
+}
+
+.heading {
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 600;
+  color: var(--cl-primary);
+  padding-block: 38px;
+  text-align: center;
+}

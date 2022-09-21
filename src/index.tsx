@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import DobbleGame from "./routes/DobbleGame/DobbleGame";
 import Quiz from "./routes/Quiz/Quiz";
 import Menu from "./routes/Menu/Menu";
+import StartDobble from "./routes/DobbleGame/StartDobble";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: "dobble",
         element: <DobbleGame />,
+      },
+      {
+        path: "dobble/start",
+        element: <StartDobble />,
       },
       {
         path: "quiz",
