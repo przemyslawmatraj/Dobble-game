@@ -1,17 +1,8 @@
-import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 import back from "../../assets/images/back.png";
 import styles from "./Navbar.module.scss";
-
-function checkPathName(pathname: string): string {
-  const pathArr = pathname.split("/");
-  return pathArr.includes("dobble")
-    ? "MEMORY"
-    : pathArr.includes("quiz")
-    ? "QUIZ"
-    : "";
-}
+import { checkPathName } from "../../helpers/pathFunctions";
 
 function Navbar() {
   const { pathname } = useLocation();

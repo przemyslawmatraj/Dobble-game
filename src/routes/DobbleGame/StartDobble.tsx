@@ -1,7 +1,10 @@
 import Card from "../../components/Cards/Card/Card";
 import styles from "./StartDobble.module.scss";
+import Modal from "../../components/Modal/Modal";
+import { useState } from "react";
 
 function StartDobble() {
+  const [open, setOpen] = useState(false);
   return (
     <div className={styles.dobble}>
       <div className={styles.counters}>
@@ -14,6 +17,12 @@ function StartDobble() {
           <Card key={index} index={(index % 9) + 1} />
         ))}
       </div>
+      <Modal
+        open={open}
+        onClose={() => setOpen(false)}
+        game="dobble"
+        isLeft
+      ></Modal>
     </div>
   );
 }
