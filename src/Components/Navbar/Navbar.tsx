@@ -21,7 +21,7 @@ function Navbar() {
         <img className={styles.logo} src={logo} alt="logo" />
       ) : (
         <>
-          <Link className={styles.menuIcon} to="/">
+          <Link className={styles.menuIcon} to="/" aria-label="Wróć do menu">
             <img src={back} alt="powrót" />
           </Link>
           <span className={styles.currentPath}>

@@ -11,6 +11,7 @@ function Card({ index }: { index: number }) {
 
   return (
     <div
+      data-card={`card-${index}`}
       className={clsx(styles.card, styles[`card${index}`])}
       onClick={handleFlip}
     >

@@ -14,7 +14,7 @@ function Game({ name, image, link }: GamePropsT) {
 function Games() {
   return (
     <div className={styles.games}>
-      <Game name="Dobble" image="https://picsum.photos/200" link="/dobble" />
+      <Game name="Memory" image="https://picsum.photos/200" link="/dobble" />
       <Game name="Quiz" image="https://picsum.photos/201" link="/quiz" />
     </div>
   );
