@@ -1,12 +1,19 @@
 import styles from "./ButtonBar.module.scss";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
+import { ButtonPropsT } from "../../types/ButtonPropsT";
 
-function ButtonBar({ url }: { url: string }) {
+function ButtonBar({ url, isTryAgain, isLeft }: ButtonPropsT) {
   return (
-    <div className={styles.buttons}>
+    <div
+      className={clsx(styles.buttons, {
+        [styles.left]: isLeft,
+      })}
+    >
       <Link to={url}>
-        <button className={styles.button}>Rozpocznij grę</button>
+        <button className={styles.button}>
+          {isTryAgain ? "Zagraj ponownie" : "Rozpocznij grę"}
+        </button>
       </Link>
       <Link to="/">
         <button className={clsx(styles.button, styles.secondary)}>

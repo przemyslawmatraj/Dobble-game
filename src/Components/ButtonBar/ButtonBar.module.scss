@@ -4,6 +4,14 @@
   margin-top: 50px;
   column-gap: 15px;
 
+  &.left {
+    justify-content: flex-start;
+    .secondary {
+      color: var(--cl-white);
+      border-color: var(--cl-white);
+    }
+  }
+
   .button {
     background: #f39200;
     box-shadow: 0px 2px 4px rgba(44, 39, 56, 0.08),
