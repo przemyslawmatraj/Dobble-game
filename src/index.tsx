@@ -7,6 +7,8 @@ import DobbleGame from "./routes/DobbleGame/DobbleGame";
 import Quiz from "./routes/Quiz/Quiz";
 import Menu from "./routes/Menu/Menu";
 import StartDobble from "./routes/DobbleGame/StartDobble";
+import { store } from "./app/store";
+import { Provider } from "react-redux";
 
 const router = createBrowserRouter([
   {
@@ -38,7 +40,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );
 
