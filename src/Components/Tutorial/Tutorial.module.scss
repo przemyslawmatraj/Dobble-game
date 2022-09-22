@@ -8,11 +8,14 @@
 }
 
 .heading {
-  color: var(--cl-primary);
+  color: var(--cl-dark);
   font-size: 41px;
   line-height: 61.5px;
   padding-top: 20px;
   padding-bottom: 35px;
+  span {
+    color: var(--cl-primary);
+  }
 }
 
 .description {

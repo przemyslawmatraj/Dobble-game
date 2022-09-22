@@ -5,7 +5,7 @@ function DobbleGame() {
   return (
     <Tutorial
       description="
-      Witaj w wirtualnym świecie WSEI. Podejmij wyzwanie z głową i sprawdź swoją spostrzegawczość, dobierając w pary odpowiednio symbole związane z naszą uczelnią. 
+      Podejmij <strong style='color: var(--cl-primary)'>#wyzwanieZgłową</strong> i sprawdź swoją spostrzegawczość, dobierając w pary odpowiednio symbole związane z naszą uczelnią. 
       <strong>Czy chcesz rozpocząć grę?</strong>"
       url="/dobble/start"
     >

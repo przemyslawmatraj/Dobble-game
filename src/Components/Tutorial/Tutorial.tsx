@@ -11,7 +11,9 @@ function Tutorial({
 }: TutorialPropsT) {
   return (
     <div className={styles.container}>
-      <h1 className={styles.heading}>Jak grać?</h1>
+      <h1 className={styles.heading}>
+        Witaj w wirtualnym świecie <span>WSEI!</span>
+      </h1>
       <p
         className={clsx(styles.description, {
           [styles.shorterWidth]: shorterWidth,

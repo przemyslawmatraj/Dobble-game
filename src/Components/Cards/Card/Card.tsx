@@ -20,12 +20,8 @@ function Card({ index }: { index: number }) {
           [styles.isFlipped]: isFlipped,
         })}
       >
-        <div className={clsx(styles.card__face, styles.card__faceFront)}>
-          <h2>?</h2>
-        </div>
-        <div className={clsx(styles.card__face, styles.card__faceBack)}>
-          <div className={styles.card__content}></div>
-        </div>
+        <div className={clsx(styles.card__face, styles.card__faceFront)}></div>
+        <div className={clsx(styles.card__face, styles.card__faceBack)}></div>
       </div>
     </div>
   );
