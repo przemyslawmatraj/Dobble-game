@@ -32,4 +32,9 @@ nav:has(+ main) {
       margin-right: auto;
     }
   }
+  nav:not(:has(+ main)) {
+    .logo {
+      display: none;
+    }
+  }
 }
