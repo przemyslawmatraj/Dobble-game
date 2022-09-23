@@ -1,9 +1,9 @@
 .heading {
   padding-top: 50px;
-  padding-bottom: 20px;
-  text-align: center;
+  padding-bottom: 5px;
   font-size: 48px;
   font-weight: 600;
+  color: var(--cl-white);
   span {
     color: var(--cl-primary);
     font-weight: 700;
@@ -11,9 +11,12 @@
 }
 
 .description {
-  max-width: 580px;
   font-size: 24px;
   line-height: 28px;
-  text-align: center;
   margin-inline: auto;
+  color: var(--cl-white);
+  span {
+    color: var(--cl-primary);
+    font-weight: 600;
+  }
 }

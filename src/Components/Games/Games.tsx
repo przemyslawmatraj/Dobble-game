@@ -1,6 +1,9 @@
 import styles from "./Games.module.scss";
 import { Link } from "react-router-dom";
 import GamePropsT from "../../types/GamesPropsT";
+import dobbleImg from "../../assets/images/dobble.png";
+import quizImg from "../../assets/images/quiz.png";
+import sticker from "../../assets/images/sticker.png";
 
 function Game({ name, image, link }: GamePropsT) {
   return (
@@ -13,9 +16,17 @@ function Game({ name, image, link }: GamePropsT) {
 
 function Games() {
   return (
-    <div className={styles.games}>
-      <Game name="Memory" image="https://picsum.photos/200" link="/dobble" />
-      <Game name="Quiz" image="https://picsum.photos/201" link="/quiz" />
+    <div className={styles.container}>
+      <div className={styles.games}>
+        <Game
+          name="Sprawdź swoją 
+          spostrzegawczość!"
+          image={dobbleImg}
+          link="/dobble"
+        />
+        <Game name="Sprawdź swoją wiedzę!" image={quizImg} link="/quiz" />
+      </div>
+      <img className={styles.sticker} src={sticker} alt="" />
     </div>
   );
 }

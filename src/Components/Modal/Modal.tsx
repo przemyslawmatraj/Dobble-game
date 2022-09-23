@@ -25,7 +25,7 @@ function Modal({ children, open, onClose, game, isLeft }: ModalProps) {
           <br />
           Czy chcesz zagrać jeszcze raz?
         </div>
-        <ButtonBar url={`/${game}/start`} isTryAgain isLeft={isLeft} />
+        <ButtonBar url={`/${game}/restart`} isTryAgain isLeft={isLeft} />
       </div>
     </>,
     document.getElementById("modal-root") as HTMLElement

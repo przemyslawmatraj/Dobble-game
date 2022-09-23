@@ -1,9 +1,10 @@
 nav {
   display: flex;
-  column-gap: 35px;
+  column-gap: 15px;
   align-items: center;
   height: 60px;
   .logo {
+    margin-left: auto;
     width: 200px;
     padding: 0 16px;
     color: white;
@@ -15,6 +16,12 @@ nav {
   .currentPath {
     color: var(--cl-dark);
     font-weight: 600;
-    font-size: 24px;
+    font-size: 21px;
+  }
+}
+
+nav:has(+ main) {
+  img {
+    filter: brightness(4);
   }
 }
