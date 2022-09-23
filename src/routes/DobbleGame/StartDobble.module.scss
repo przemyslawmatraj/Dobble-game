@@ -14,7 +14,7 @@
 }
 
 .heading {
-  font-size: 40px;
+  font-size: 30px;
   line-height: 60px;
   font-weight: 600;
   color: var(--cl-white);
@@ -28,13 +28,12 @@
 
 .counters {
   position: absolute;
-  top: -10vh;
-  right: 5vw;
+  top: min(-10vh, -100px);
+  right: min(5vw, 50px);
   display: grid;
   grid-template-rows: 1fr 1fr;
   gap: 20px;
   width: fit-content;
-
   font-weight: 700;
   & > *::before {
     display: inline;
@@ -50,5 +49,21 @@
     &::before {
       content: "🏆 ";
     }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .counters {
+    margin-top: 10px;
+    position: relative;
+    top: auto;
+    right: auto;
+    grid-template-columns: max-content max-content;
+    grid-template-rows: auto;
+    text-align: center;
+    margin-inline: auto;
+  }
+  .heading {
+    margin-top: 20px;
   }
 }

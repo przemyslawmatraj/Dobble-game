@@ -1,19 +1,26 @@
 import styles from "./Card.module.scss";
-import { useState } from "react";
 import clsx from "clsx";
 
-function Card({ index }: { index: number }) {
-  const [isFlipped, setIsFlipped] = useState(false);
-
-  const handleFlip = () => {
-    setIsFlipped(!isFlipped);
-  };
-
+function Card({
+  id,
+  name,
+  isFlipped,
+  onClick,
+  matched,
+}: {
+  id: number;
+  name: string;
+  isFlipped: boolean;
+  onClick: any;
+  matched: boolean;
+}) {
   return (
     <div
-      data-card={`card-${index}`}
-      className={clsx(styles.card, styles[`card${index}`])}
-      onClick={handleFlip}
+      data-card={`card-${id}`}
+      className={clsx(styles.card, styles[name], {
+        [styles.matched]: matched,
+      })}
+      onClick={matched ? null : onClick}
     >
       <div
         className={clsx(styles.card__inner, {

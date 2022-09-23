@@ -1,7 +1,6 @@
 .container {
   display: grid;
   place-items: center;
-  align-content: center;
   text-align: center;
   height: 80vh;
   grid-template-rows: repeat(3, min-content);

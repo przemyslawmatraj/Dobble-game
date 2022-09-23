@@ -1,17 +1,31 @@
 import styles from "./Modal.module.scss";
 import ReactDom from "react-dom";
 import ButtonBar from "../ButtonBar/ButtonBar";
+import { ReactNode } from "react";
 
 export interface ModalProps {
   open: boolean;
-  children?: React.ReactNode;
+  children?: ReactNode;
   onClose: () => void;
   game: string;
   isLeft?: boolean;
+  score: number;
+  time?: number;
+  onClick?: () => void;
 }
 
-function Modal({ children, open, onClose, game, isLeft }: ModalProps) {
+function Modal({
+  children,
+  open,
+  onClose,
+  game,
+  isLeft,
+  score,
+  time,
+  onClick,
+}: ModalProps) {
   if (!open) return null;
+
   return ReactDom.createPortal(
     <>
       <div className={styles.overlay} onClick={onClose}></div>
@@ -20,12 +34,12 @@ function Modal({ children, open, onClose, game, isLeft }: ModalProps) {
         <div className={styles.content}>
           Dobra robota, projekt zakończony!
           <br />
-          <br /> Twój wynik to: <strong>XYZ</strong> Zajmujesz{" "}
-          <strong>xyz</strong> miejsce w rankingu! <br />
+          <br /> Twój wynik to: <strong>{score}</strong> w czasie:{" "}
+          <strong>{time ? time : null}</strong> sekund
           <br />
           Czy chcesz zagrać jeszcze raz?
         </div>
-        <ButtonBar url={`/${game}/restart`} isTryAgain isLeft={isLeft} />
+        <ButtonBar url={`/${game}/restart`} action={onClick} isLeft={isLeft} />
       </div>
     </>,
     document.getElementById("modal-root") as HTMLElement

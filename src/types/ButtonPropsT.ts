@@ -1,5 +1,5 @@
 export interface ButtonPropsT {
-  url: string;
-  isTryAgain?: boolean;
+  url?: string;
   isLeft?: boolean;
+  action?: () => void;
 }
