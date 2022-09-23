@@ -3,10 +3,16 @@ import { Link } from "react-router-dom";
 import clsx from "clsx";
 import { ButtonPropsT } from "../../types/ButtonPropsT";
 
-function ButtonBar({ url, isLeft, action }: ButtonPropsT) {
+function ButtonBar({
+  url,
+  isLeft,
+  action,
+  secBtnColor,
+  className,
+}: ButtonPropsT) {
   return (
     <div
-      className={clsx(styles.buttons, {
+      className={clsx(styles.buttons, className, {
         [styles.left]: isLeft,
       })}
     >
@@ -20,7 +26,13 @@ function ButtonBar({ url, isLeft, action }: ButtonPropsT) {
         </Link>
       )}
       <Link to="/">
-        <button className={clsx(styles.button, styles.secondary)}>
+        <button
+          className={clsx(styles.button, styles.secondary)}
+          style={{
+            color: secBtnColor,
+            borderColor: secBtnColor,
+          }}
+        >
           Wróć do menu
         </button>
       </Link>

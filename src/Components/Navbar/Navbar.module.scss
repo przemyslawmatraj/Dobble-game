@@ -25,3 +25,11 @@ nav:has(+ main) {
     filter: brightness(4);
   }
 }
+
+@media screen and (max-width: 768px) {
+  nav {
+    .logo {
+      margin-right: auto;
+    }
+  }
+}

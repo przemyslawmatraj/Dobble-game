@@ -4,7 +4,7 @@ const generateCards = () => {
     cards.push({
       id: i,
       name: `card${i}`,
-      isFlipped: true,
+      isFlipped: false,
       matched: false,
     });
   }
@@ -12,7 +12,7 @@ const generateCards = () => {
     cards.push({
       id: 9 + i,
       name: `card${i}`,
-      isFlipped: true,
+      isFlipped: false,
       matched: false,
     });
   }

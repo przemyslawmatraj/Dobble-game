@@ -2,7 +2,7 @@ type TutorialPropsT = {
   description: string;
   url: string;
   children?: React.ReactNode;
-  shorterWidth?: boolean;
+  quiz?: boolean;
 };
 
 export default TutorialPropsT;

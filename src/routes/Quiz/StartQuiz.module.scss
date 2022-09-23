@@ -1,0 +1,107 @@
+.container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: repeat(3, min-content);
+  margin-top: 40px;
+}
+
+.question {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  font-weight: 500;
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.questionCounter {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  background-color: var(--cl-secondary);
+  color: var(--cl-white);
+  height: fit-content;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.answers {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  display: grid;
+  row-gap: 10px;
+  .answer {
+    margin-bottom: 20px;
+    background: #ececec;
+    border-radius: 25px;
+    border: none;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 45px;
+    text-align: center;
+    color: var(--cl-dark);
+    position: relative;
+    min-height: 50px;
+    &::before {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: calc(100% - 50px);
+      text-align: center;
+      position: absolute;
+      font-size: 30px;
+      font-weight: 600;
+      color: var(--cl-white);
+      border-radius: 25px 0px 0px 25px;
+      display: grid;
+      place-items: center;
+    }
+
+    &:nth-child(1):before {
+      content: "a";
+      background-color: var(--cl-primary);
+    }
+
+    &:nth-child(2):before {
+      content: "b";
+      background-color: var(--cl-dark);
+    }
+  }
+}
+
+.sticker {
+  position: relative;
+  bottom: -100px;
+  grid-column: 2 / 3;
+  grid-row: 1 / 4;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    grid-template-columns: auto;
+    grid-template-rows: repeat(4, min-content);
+  }
+  .question {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    font-size: 20px;
+  }
+  .questionCounter {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+  .answers {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+  }
+  .sticker {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    bottom: auto;
+    width: 50vw;
+    justify-self: center;
+  }
+}

@@ -34,8 +34,12 @@ function Modal({
         <div className={styles.content}>
           Dobra robota, projekt zakończony!
           <br />
-          <br /> Twój wynik to: <strong>{score}</strong> w czasie:{" "}
-          <strong>{time ? time : null}</strong> sekund
+          <br /> Twój wynik to: <strong>{score}pkt</strong> w czasie
+          {time ? (
+            <>
+              <strong> {time} sek</strong>
+            </>
+          ) : null}
           <br />
           Czy chcesz zagrać jeszcze raz?
         </div>
