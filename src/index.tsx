@@ -9,11 +9,19 @@ import Menu from "./routes/Menu/Menu";
 import StartDobble from "./routes/DobbleGame/StartDobble";
 import { store } from "./app/store";
 import { Provider } from "react-redux";
+import StartQuiz from "./routes/Quiz/StartQuiz";
+
+import ScrollToTop from "./helpers/ScrollToTop";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: (
+      <>
+        <ScrollToTop />
+        <App />
+      </>
+    ),
     children: [
       {
         path: "/",
@@ -30,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "quiz",
         element: <Quiz />,
+      },
+      {
+        path: "quiz/start",
+        element: <StartQuiz />,
       },
     ],
   },

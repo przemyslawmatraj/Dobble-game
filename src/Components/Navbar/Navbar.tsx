@@ -18,6 +18,9 @@ function Navbar() {
           <span className={styles.currentPath}>
             WSEI Games - {checkPathName(pathname)}
           </span>
+          {pathname === "/quiz" && (
+            <img className={styles.logo} src={logo} alt="logo" />
+          )}
         </>
       )}
     </nav>

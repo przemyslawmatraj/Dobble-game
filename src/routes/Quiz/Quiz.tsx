@@ -3,12 +3,14 @@ import Tutorial from "../../components/Tutorial/Tutorial";
 function Quiz() {
   return (
     <Tutorial
-      description="Jak rozległa jest Twoja wiedza?<br/> 
-  <strong>Rozwiąż quiz</strong> i przekonaj się, czy udzielanie
-   poprawnych odpowiedzi to Twoja supermoc!"
+      description="
+      <strong>Rozwiąż quiz z głową</strong>
+      Sprawdź jak rozległa jest Twoja wiedza? 
+      Przekonaj się, czy udzielanie poprawnych
+      odpowiedzi to Twoja <strong style='color: var(--cl-primary)'>#supermoc!</strong>"
       url="/quiz/start"
-      shorterWidth
-    />
+      quiz
+    ></Tutorial>
   );
 }
 
