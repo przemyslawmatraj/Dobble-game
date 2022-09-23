@@ -1,0 +1,28 @@
+.container {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  height: 80vh;
+  grid-template-rows: repeat(3, min-content);
+}
+
+.heading {
+  color: var(--cl-dark);
+  font-size: 41px;
+  line-height: 61.5px;
+  padding-top: 20px;
+  padding-bottom: 35px;
+  span {
+    color: var(--cl-primary);
+  }
+}
+
+.description {
+  padding-bottom: 40px;
+  line-height: 30px;
+  max-width: 890px;
+}
+
+.shorterWidth {
+  max-width: 610px;
+}

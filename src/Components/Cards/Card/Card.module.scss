@@ -1,0 +1,115 @@
+.card {
+  width: min(24vw, 160px);
+  aspect-ratio: 1/1;
+  perspective: 1000px;
+}
+
+.card__inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+}
+
+.card__inner.isFlipped {
+  transform: rotateY(180deg);
+}
+
+.card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+  border-radius: 15%;
+  background-size: cover;
+}
+
+.card__faceFront {
+  background-image: url("../../../assets/images/cards/front.png");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__faceFront h2 {
+  color: #fff;
+  font-size: 32px;
+}
+
+.card__faceBack {
+  transform: rotateY(180deg);
+}
+
+.card {
+  &1 {
+    .card__faceBack {
+      background-image: url("../../../assets/images/cards/Group\ 3.png");
+    }
+  }
+  &2 {
+    .card__faceBack {
+      background-image: url("../../../assets/images/cards/Group\ 4.png");
+    }
+  }
+  &3 {
+    .card__faceBack {
+      background-image: url("../../../assets/images/cards/Group\ 5.png");
+    }
+  }
+  &4 {
+    .card__faceBack {
+      background-image: url("../../../assets/images/cards/Group\ 6.png");
+    }
+  }
+  &5 {
+    .card__faceBack {
+      background-image: url("../../../assets/images/cards/Group\ 7.png");
+    }
+  }
+  &6 {
+    .card__faceBack {
+      background-image: url("../../../assets/images/cards/Group\ 8.png");
+    }
+  }
+  &7 {
+    .card__faceBack {
+      background-image: url("../../../assets/images/cards/Group\ 9.png");
+    }
+  }
+  &8 {
+    .card__faceBack {
+      background-image: url("../../../assets/images/cards/Group\ 10.png");
+    }
+  }
+  &9 {
+    .card__faceBack {
+      background-image: url("../../../assets/images/cards/Group\ 11.png");
+    }
+  }
+}
+
+.matched {
+  pointer-events: none;
+  animation-name: matched;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  animation-fill-mode: forwards;
+}
+
+@keyframes matched {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
