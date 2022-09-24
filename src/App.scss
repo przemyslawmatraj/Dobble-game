@@ -35,9 +35,15 @@ body {
   padding-top: 30px;
   min-height: 100vh;
 }
-
-.container:has(main) {
+.dark {
   background-color: var(--cl-dark-blue);
+  box-shadow: 0 0 0 100vmax var(--cl-dark-blue);
+}
+
+nav:has(#{"+ .dark"}) {
+  img {
+    filter: brightness(4);
+  }
 }
 
 img {
