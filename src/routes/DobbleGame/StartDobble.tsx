@@ -29,6 +29,8 @@ function StartDobble() {
     const shuffledCards = cardsCopy.sort(() => Math.random() - 0.5);
     setCards(shuffledCards);
     setIsTimerActive(true);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // check if cards are matched

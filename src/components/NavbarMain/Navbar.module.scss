@@ -20,16 +20,15 @@ nav {
   }
 }
 
-nav:has(+ main) {
-  img {
-    filter: brightness(4);
-  }
-}
-
 @media screen and (max-width: 768px) {
   nav {
     .logo {
       margin-right: auto;
+    }
+  }
+  nav:has(* > main) {
+    .logo {
+      display: none;
     }
   }
 }
