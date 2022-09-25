@@ -37,7 +37,7 @@ function Modal({
           <br />
           {game === "dobble" ? (
             <>
-              Twój wynik to: <strong>{score}pkt</strong>
+              Twój wynik to: <strong>{score}pkt </strong>
               {time ? (
                 <>
                   w czasie <strong> {time} sek</strong>
