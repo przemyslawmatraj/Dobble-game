@@ -46,7 +46,7 @@ function Modal({
             </>
           ) : (
             <>
-              Udzieliłeś <strong>{score}/7</strong> poprawnych odpowiedzi
+              Udzieliłeś <strong>{score}/5</strong> poprawnych odpowiedzi
             </>
           )}
           <br />
