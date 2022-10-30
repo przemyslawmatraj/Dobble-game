@@ -14,7 +14,7 @@
 ## General info
 
 
-The games was created for the event "Krakowski Salon Maturzystów" to promote WSEI universities.
+The games was created for the event "Krakowski Salon Maturzystów" to promote WSEI university.
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
