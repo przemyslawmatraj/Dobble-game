@@ -1,46 +1,79 @@
-# Getting Started with Create React App
+# Dobble game & quiz
+## Table of contents
+* [General info](#general-info)
+* [Project status](#project-status)
+* [Live app](#live-app)
+* [Project screenshots](#project-screenshots)
+* [Installation and setup instruction](#installation-and-setup-instruction)
+* [Technologies](#technologies)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-In the project directory, you can run:
 
-### `npm start`
+## General info
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The games was created for the event "Krakowski Salon Maturzystów" to promote WSEI universities.
 
-### `npm test`
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project status
 
-### `npm run build`
+Mostly done. A ranking will be added to the games in the future.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Live app
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The application is implemented on the university's server and is available here -> [LINK](http://games.dth.wsei.edu.pl/)
 
-### `npm run eject`
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Project screenshots
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![project screenshot](https://media.giphy.com/media/Tyc0w3XfdMAAKzn0kd/giphy.gif)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![project screenshot](https://media.giphy.com/media/twJtN1MN5vFCFCAiTk/giphy.gif)
 
-## Learn More
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Installation and setup instruction
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Clone down this repository. You will need node and npm installed globally on your machine.
+
+Then install and run it locally.
+
+```
+
+git clone https://github.com/przemyslawmatraj/Dobble-game.git
+```
+
+```
+
+cd Dobble-game
+
+```
+
+```
+
+npm install
+
+```
+
+```
+
+npm start
+
+```
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+## Technologies
+
+- react v18.2.0
+- redux toolkit v1.8.5
+- sass
+- css modules
+- typescript
