@@ -2,15 +2,22 @@ import { useState } from "react";
 import styles from "./StartQuiz.module.scss";
 import questions from "./qa";
 import Modal from "../../components/Modal/Modal";
+import useRanking from "../../hooks/useRanking";
+
+import io from "socket.io-client";
+const socket = io("http://192.168.0.14:5001");
 
 function StartQuiz() {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [open, setOpen] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [attempt, setAttempt] = useState(0);
+
+  const { placeInRanking, countOfPlayers, restartTimer } = useRanking({
+    socket,
+    currentQuestion,
+    showScore,
+    score,
+  });
 
   const handleAnswerOptionClick = (isCorrect: boolean) => {
     if (isCorrect) {
@@ -25,25 +32,19 @@ function StartQuiz() {
     }
   };
 
-  // useEffect(() => {
-  //   if (attempt === 2) {
-  //     setAttempt(0);
-  //   }
-  // }, [open, attempt]);
-
   const random = Math.floor(Math.random() * 2) + 1;
 
   return (
     <>
       <Modal
+        players={countOfPlayers}
+        placeInRanking={placeInRanking}
         open={showScore}
-        onClose={() => {
-          setOpen(false);
-        }}
         onClick={() => {
           setShowScore(false);
           setCurrentQuestion(0);
           setScore(0);
+          restartTimer();
           // setAttempt(attempt + 1);
         }}
         game="quiz"
@@ -54,7 +55,7 @@ function StartQuiz() {
           Pytanie {currentQuestion + 1} / 5
         </div>
         <h3 className={styles.question}>
-          {questions[currentQuestion + attempt * 7].question}
+          {questions[currentQuestion].question}
         </h3>
         {!showScore && (
           <div className={styles.answers}>
@@ -64,13 +65,13 @@ function StartQuiz() {
                   className={styles.answer}
                   onClick={() => handleAnswerOptionClick(true)}
                 >
-                  {questions[currentQuestion + attempt * 7].correct_answer}
+                  {questions[currentQuestion].correct_answer}
                 </button>
                 <button
                   className={styles.answer}
                   onClick={() => handleAnswerOptionClick(false)}
                 >
-                  {questions[currentQuestion + attempt * 7].incorrect_answer}
+                  {questions[currentQuestion].incorrect_answer}
                 </button>
               </>
             ) : (
@@ -79,20 +80,20 @@ function StartQuiz() {
                   className={styles.answer}
                   onClick={() => handleAnswerOptionClick(false)}
                 >
-                  {questions[currentQuestion + attempt * 7].incorrect_answer}
+                  {questions[currentQuestion].incorrect_answer}
                 </button>
                 <button
                   className={styles.answer}
                   onClick={() => handleAnswerOptionClick(true)}
                 >
-                  {questions[currentQuestion + attempt * 7].correct_answer}
+                  {questions[currentQuestion].correct_answer}
                 </button>
               </>
             )}
           </div>
         )}
         <img
-          src={questions[currentQuestion + attempt * 7].image}
+          src={questions[currentQuestion].image}
           alt=""
           className={styles.sticker}
         />

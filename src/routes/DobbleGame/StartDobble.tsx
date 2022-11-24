@@ -131,7 +131,6 @@ function StartDobble() {
       </div>
       <Modal
         open={open}
-        onClose={() => setOpen(false)}
         game="dobble"
         isLeft
         score={score}
