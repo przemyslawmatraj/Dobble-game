@@ -5,7 +5,7 @@ import Modal from "../../components/Modal/Modal";
 import useRanking from "../../hooks/useRanking";
 
 import io from "socket.io-client";
-const socket = io("http://192.168.0.14:5001");
+const socket = io("http://192.166.219.118:5001");
 
 function StartQuiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
