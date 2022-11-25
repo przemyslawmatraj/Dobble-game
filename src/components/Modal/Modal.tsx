@@ -6,29 +6,31 @@ import { ReactNode } from "react";
 export interface ModalProps {
   open: boolean;
   children?: ReactNode;
-  onClose: () => void;
   game: string;
   isLeft?: boolean;
   score: number;
   time?: number;
   onClick?: () => void;
+  placeInRanking?: number;
+  players?: number;
 }
 
 function Modal({
   children,
   open,
-  onClose,
   game,
   isLeft,
   score,
   time,
   onClick,
+  placeInRanking,
+  players,
 }: ModalProps) {
   if (!open) return null;
 
   return ReactDom.createPortal(
     <>
-      <div className={styles.overlay} onClick={onClose}></div>
+      <div className={styles.overlay}></div>
       <div className={styles.modal}>
         <h2 className={styles.title}>Koniec!</h2>
         <div className={styles.content}>
@@ -47,6 +49,14 @@ function Modal({
           ) : (
             <>
               Udzieliłeś <strong>{score}/5</strong> poprawnych odpowiedzi
+              {placeInRanking ? (
+                <>
+                  <br />
+                  Twój wynik umieścił Cię na{" "}
+                  <strong>{placeInRanking} miejscu</strong> w rankingu pośród{" "}
+                  {players} graczy
+                </>
+              ) : null}
             </>
           )}
           <br />
