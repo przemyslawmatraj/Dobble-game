@@ -27,16 +27,14 @@ const useRanking = ({
       console.log(yourPlace);
       setPlaceInRanking(yourPlace);
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [socket]);
 
   useEffect(() => {
     socket.on("userscount", (count: number) => {
       console.log(count);
       setCountOfPlayers(count);
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [socket]);
 
   useEffect(() => {
     if (currentQuestion === 4 && showScore) {
