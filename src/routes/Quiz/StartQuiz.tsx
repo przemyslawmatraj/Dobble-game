@@ -5,7 +5,7 @@ import Modal from "../../components/Modal/Modal";
 import useRanking from "../../hooks/useRanking";
 
 import io from "socket.io-client";
-const socket = io("http://192.166.219.118:5001");
+const socket = io("http://192.166.219.118:10001");
 
 function StartQuiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -25,14 +25,12 @@ function StartQuiz() {
     }
 
     const nextQuestion = currentQuestion + 1;
-    if (nextQuestion < 5) {
+    if (nextQuestion < 10) {
       setCurrentQuestion(nextQuestion);
     } else {
       setShowScore(true);
     }
   };
-
-  const random = Math.floor(Math.random() * 2) + 1;
 
   return (
     <>
@@ -45,51 +43,31 @@ function StartQuiz() {
           setCurrentQuestion(0);
           setScore(0);
           restartTimer();
-          // setAttempt(attempt + 1);
         }}
         game="quiz"
         score={score}
       ></Modal>
       <div className={styles.container}>
         <div className={styles.questionCounter}>
-          Pytanie {currentQuestion + 1} / 5
+          Pytanie {currentQuestion + 1} / 10
         </div>
         <h3 className={styles.question}>
           {questions[currentQuestion].question}
         </h3>
         {!showScore && (
           <div className={styles.answers}>
-            {random === 1 ? (
-              <>
-                <button
-                  className={styles.answer}
-                  onClick={() => handleAnswerOptionClick(true)}
-                >
-                  {questions[currentQuestion].correct_answer}
-                </button>
-                <button
-                  className={styles.answer}
-                  onClick={() => handleAnswerOptionClick(false)}
-                >
-                  {questions[currentQuestion].incorrect_answer}
-                </button>
-              </>
-            ) : (
-              <>
-                <button
-                  className={styles.answer}
-                  onClick={() => handleAnswerOptionClick(false)}
-                >
-                  {questions[currentQuestion].incorrect_answer}
-                </button>
-                <button
-                  className={styles.answer}
-                  onClick={() => handleAnswerOptionClick(true)}
-                >
-                  {questions[currentQuestion].correct_answer}
-                </button>
-              </>
-            )}
+            {[...questions][currentQuestion].answers.sort(
+              () => Math.random() - 0.5
+            ).map((answerOption) => (
+              <button
+                onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}
+                className={styles.answer}
+                key={answerOption.answer}
+              >
+                {answerOption.answer}
+              </button>
+            ))}
+
           </div>
         )}
         <img

@@ -68,6 +68,11 @@
       content: "b";
       background-color: var(--cl-dark);
     }
+
+    &:nth-child(3):before {
+      content: "c";
+      background-color: var(--cl-secondary);
+    }
   }
 }
 
