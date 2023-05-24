@@ -48,7 +48,7 @@ function Modal({
             </>
           ) : (
             <>
-              Udzieliłeś <strong>{score}/5</strong> poprawnych odpowiedzi
+              Udzieliłeś <strong>{score}/10</strong> poprawnych odpowiedzi
               {placeInRanking ? (
                 <>
                   <br />
